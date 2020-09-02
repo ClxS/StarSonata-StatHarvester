@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatHarvester", "PaxianProxy\StatHarvester.csproj", "{B9DECF8D-01ED-4003-BED5-FC9155C88A01}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarSonata.Api", "StarSonata.Api\StarSonata.Api.csproj", "{5FC5222A-0880-4D2F-AD49-223EA49D9C80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3B10F21A-56F6-4B56-9AE5-3B5E388858AF}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9DECF8D-01ED-4003-BED5-FC9155C88A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9DECF8D-01ED-4003-BED5-FC9155C88A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9DECF8D-01ED-4003-BED5-FC9155C88A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9DECF8D-01ED-4003-BED5-FC9155C88A01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FC5222A-0880-4D2F-AD49-223EA49D9C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FC5222A-0880-4D2F-AD49-223EA49D9C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FC5222A-0880-4D2F-AD49-223EA49D9C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FC5222A-0880-4D2F-AD49-223EA49D9C80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E36B955D-6942-492F-BA22-41831C23F3D4}
+	EndGlobalSection
+EndGlobal
