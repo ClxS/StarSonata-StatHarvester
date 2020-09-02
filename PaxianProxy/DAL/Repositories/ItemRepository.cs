@@ -12,30 +12,28 @@
         {
             await using var db = await StatConnection.Create();
             await db.OpenAsync();
-            using (var transaction = await db.BeginTransactionAsync())
-            {
-                var nameHash = CalculateNameHash(item.Name);
-                await AddOrUpdateStatFieldAsync(item, nameHash, transaction);
+            await using var transaction = await db.BeginTransactionAsync();
+            var nameHash = CalculateNameHash(item.Name);
+            await AddOrUpdateStatFieldAsync(item, nameHash, transaction);
 
-                item.NameHash = nameHash;
-                var existingItem = await db.GetAsync<Item>(item.NameHash, transaction);
-                if (existingItem != null)
-                {
-                    Log.Debug("Updating {Item} in database", item.Name);
-                    existingItem.Tech = item.Tech;
-                    existingItem.Description = item.Description;
-                    existingItem.Rarity = item.Rarity;
-                    existingItem.Type = item.Type;
-                    existingItem.StructuredDescription = item.StructuredDescription;
-                    existingItem.Weight = item.Weight;
-                    existingItem.Size = item.Size;
-                    await db.UpdateAsync(existingItem, transaction);
-                }
-                else
-                {
-                    Log.Debug("Entering {Item} to database", item.Name);
-                    await db.InsertAsync(item, transaction);
-                }
+            item.NameHash = nameHash;
+            var existingItem = await db.GetAsync<Item>(item.NameHash, transaction);
+            if (existingItem != null)
+            {
+                Log.Debug("Updating {Item} in database", item.Name);
+                existingItem.Tech = item.Tech;
+                existingItem.Description = item.Description;
+                existingItem.Rarity = item.Rarity;
+                existingItem.Type = item.Type;
+                existingItem.StructuredDescription = item.StructuredDescription;
+                existingItem.Weight = item.Weight;
+                existingItem.Size = item.Size;
+                await db.UpdateAsync(existingItem, transaction);
+            }
+            else
+            {
+                Log.Debug("Entering {Item} to database", item.Name);
+                await db.InsertAsync(item, transaction);
             }
         }
 
